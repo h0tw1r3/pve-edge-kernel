@@ -10,21 +10,12 @@ behavior of mdadm.
 Signed-off-by: Thomas Lamprecht <t.lamprecht@proxmox.com>
 ---
  cmd/zed/zed.d/zed.rc | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ 1 file changed, 1 insertions(+), 1 deletions(-)
 
 diff --git a/cmd/zed/zed.d/zed.rc b/cmd/zed/zed.d/zed.rc
 index df560f921..4ce7af744 100644
 --- a/cmd/zed/zed.d/zed.rc
 +++ b/cmd/zed/zed.d/zed.rc
-@@ -15,7 +15,7 @@
- # Email will only be sent if ZED_EMAIL_ADDR is defined.
- # Disabled by default; uncomment to enable.
- #
--#ZED_EMAIL_ADDR="root"
-+ZED_EMAIL_ADDR="root"
- 
- ##
- # Name or path of executable responsible for sending notifications via email;
 @@ -41,7 +41,7 @@
  ##
  # Minimum number of seconds between notifications for a similar event.

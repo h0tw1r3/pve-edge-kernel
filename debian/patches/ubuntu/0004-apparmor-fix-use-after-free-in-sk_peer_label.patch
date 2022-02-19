@@ -13,12 +13,12 @@ Signed-off-by: Seth Forshee <seth.forshee@canonical.com>
 (limited to 'security/apparmor')
 
 diff --git a/security/apparmor/lsm.c b/security/apparmor/lsm.c
-index 59a8ddd..b1216ee 100644
+index 4f0eecb67dde..31abdaf38de7 100644
 --- a/security/apparmor/lsm.c
 +++ b/security/apparmor/lsm.c
-@@ -1162,9 +1162,10 @@ static struct aa_label *sk_peer_label(struct sock *sk)
+@@ -1073,9 +1073,10 @@ static int apparmor_socket_sock_rcv_skb(struct sock *sk, struct sk_buff *skb)
+ static struct aa_label *sk_peer_label(struct sock *sk)
  {
- 	struct sock *peer_sk;
  	struct aa_sk_ctx *ctx = SK_CTX(sk);
 +	struct aa_label *label = ERR_PTR(-ENOPROTOOPT);
  
@@ -26,28 +26,9 @@ index 59a8ddd..b1216ee 100644
 -		return ctx->peer;
 +		return aa_get_label(ctx->peer);
  
- 	if (sk->sk_family != PF_UNIX)
- 		return ERR_PTR(-ENOPROTOOPT);
-@@ -1172,14 +1173,15 @@ static struct aa_label *sk_peer_label(struct sock *sk)
- 	/* check for sockpair peering which does not go through
- 	 * security_unix_stream_connect
- 	 */
--	peer_sk = unix_peer(sk);
-+	peer_sk = unix_peer_get(sk);
- 	if (peer_sk) {
- 		ctx = SK_CTX(peer_sk);
- 		if (ctx->label)
--			return ctx->label;
-+			label = aa_get_label(ctx->label);
-+		sock_put(peer_sk);
- 	}
- 
--	return ERR_PTR(-ENOPROTOOPT);
-+	return label;
+ 	return ERR_PTR(-ENOPROTOOPT);
  }
- 
- /**
-@@ -1223,6 +1225,7 @@ out:
+@@ -1121,6 +1122,7 @@ static int apparmor_socket_getpeersec_stream(struct socket *sock,
  
  	}
  
