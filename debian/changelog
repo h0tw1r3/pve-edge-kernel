@@ -1,3 +1,9 @@
+pve-kernel (5.17.0-0rc7) edge; urgency=medium
+
+  * Update to Linux 5.17
+
+ -- Jeffrey Clark <h0tw1r3@gmail.com>  Thu, 10 Mar 2022 06:37:00 +0000
+
 pve-kernel (5.17.0-0rc6) edge; urgency=medium
 
   * Update to Linux 5.17
