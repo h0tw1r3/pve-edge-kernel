@@ -11,3 +11,4 @@ zfs/0010-arcstat-Fix-integer-division-with-python3.patch
 zfs/0011-arc-stat-summary-guard-access-to-l2arc-MFU-MRU-stats.patch
 zfs/0012-renameat2-overlayfs.patch
 zfs/0013-zfs-fake-container-magic.patch
+zfs/0014-fix-renameat2-deadlock.patch
