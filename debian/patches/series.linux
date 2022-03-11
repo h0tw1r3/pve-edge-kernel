@@ -12,3 +12,5 @@ pve/0005-net-core-downgrade-unregister_netdevice-refcount-lea.patch
 # pve/0007-PCI-Reinstate-PCI-Coalesce-host-bridge-contiguous-ap.patch
 pve/0008-do-not-generate-split-BTF-type-info-per-default.patch
 pve/0009-blk-cgroup-always-terminate-io.stat-lines.patch
+
+h0tw1r3/0001-it87.patch
