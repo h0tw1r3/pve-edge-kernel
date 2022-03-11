@@ -30,3 +30,5 @@ pve/0025-KVM-x86-smm-preserve-interrupt-shadow-in-SMRAM.patch
 
 h0tw1r3/binfmt_misc-cleanup-on-filesystem-umount.diff
 h0tw1r3/binfmt_misc-enable-sandboxed-mounts.diff
+
+h0tw1r3/0001-it87.patch
