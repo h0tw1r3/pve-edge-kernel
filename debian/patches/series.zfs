@@ -9,3 +9,6 @@ zfs/0008-Add-systemd-unit-for-importing-specific-pools.patch
 zfs/0009-Patch-move-manpage-arcstat-1-to-arcstat-8.patch
 zfs/0010-arcstat-Fix-integer-division-with-python3.patch
 zfs/0011-arc-stat-summary-guard-access-to-l2arc-MFU-MRU-stats.patch
+
+zfs/1001-optimize-microzaps.patch
+zfs/1101-overlayfs.patch
