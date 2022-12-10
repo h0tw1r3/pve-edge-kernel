@@ -1,3 +1,9 @@
+pve-kernel (6.0.15-2) edge; urgency=medium
+
+  * binfmt, it87 and zfs overlayfs patch
+
+ -- Jeffrey Clark <h0tw1r3@users.noreply.github.com>  Wed, 28 Dec 2022 11:16:17 -0600
+
 pve-kernel (6.0.15-1) edge; urgency=medium
 
   * Update to Linux 6.0.15.
